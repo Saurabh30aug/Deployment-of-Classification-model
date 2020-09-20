@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body align="center">
+ <div class="login">
+	<h1>Iris Dataset for Predicting types:</h1>
+
+
+   <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Petal.length" placeholder="Petal.length" required="required" />
+        <input type="text" name="Sepal.length" placeholder="Sepal.length" required="required" />
+		<input type="text" name="Sepal.width" placeholder="Sepal.width" required="required" />
+       <input type="text" name="Petal.width" placeholder="Petal.width" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+
+
+
+</html>
